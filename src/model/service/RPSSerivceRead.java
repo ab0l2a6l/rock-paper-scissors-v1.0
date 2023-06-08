@@ -1,5 +1,7 @@
 package model.service;
 
+import model.entity.RockPaperScissors;
+
 public interface RPSSerivceRead {
-    void show();
+    void show(RockPaperScissors rockPaperScissors);
 }

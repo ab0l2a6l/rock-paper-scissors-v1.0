@@ -15,7 +15,7 @@ public class RPSService implements RPSServiceWrite, RPSSerivceRead {
     }
 
     @Override
-    public void show() {
-        read.show();
+    public void show(RockPaperScissors rockPaperScissors) {
+        read.show(rockPaperScissors);
     }
 }

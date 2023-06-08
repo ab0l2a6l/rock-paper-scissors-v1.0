@@ -6,8 +6,6 @@ import java.util.Random;
 
 public class RPSDBDAO implements RPSDBDAOWrite, RPSDBDAORead {
     Random rand;
-    private int rateUser = 0;
-    private int rateRoot = 0;
 
     @Override
     public void whoWin(RockPaperScissors rockPaperScissors) {
@@ -20,26 +18,29 @@ public class RPSDBDAO implements RPSDBDAOWrite, RPSDBDAORead {
         if ((userNumber == 1 && rootNumber == 3) ||
                 (userNumber == 2 && rootNumber == 1) ||
                 (userNumber == 3 && rootNumber == 2)) {
-            rateUser++;
+            rockPaperScissors.setUserRate(rockPaperScissors.getRootRate() + 1);
             System.out.println("user ^-^");
             System.out.println("computer");
         }
         if ((userNumber == 1 && rootNumber == 2) ||
                 (userNumber == 3 && rootNumber == 1) ||
                 (userNumber == 2 && rootNumber == 3)) {
-            rateRoot++;
+            rockPaperScissors.setRootRate(rockPaperScissors.getRootRate() + 1);
             System.out.println("user ");
             System.out.println("computer ^-^");
         }
         System.out.println("your rate\t" + "rateUser");
-        System.out.println(rateUser + "\t\t\t" + rateRoot);
+        System.out.println(rockPaperScissors.getUserRate() + "\t\t\t" + rockPaperScissors.getRootRate());
     }
 
     @Override
-    public void show() {
-        if (rateRoot > rateUser)
+    public void show(RockPaperScissors rockPaperScissors) {
+        System.out.println("finally : \n");
+        System.out.println("your rate\t" + "rateUser");
+        System.out.println(rockPaperScissors.getUserRate() + "\t\t\t" + rockPaperScissors.getRootRate());
+        if (rockPaperScissors.getRootRate() > rockPaperScissors.getUserRate())
             System.out.println("computer is winner");
-        else if (rateUser > rateRoot)
+        else if (rockPaperScissors.getUserRate() > rockPaperScissors.getRootRate())
             System.out.println("you are winner");
         else System.out.println("draw");
     }

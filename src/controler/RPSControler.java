@@ -14,8 +14,8 @@ public class RPSControler {
         write.whoWin(rockPaperScissors);
     }
 
-    public void show() {
-        read.show();
+    public void show(RockPaperScissors rockPaperScissors) {
+        read.show(rockPaperScissors);
     }
 
 }

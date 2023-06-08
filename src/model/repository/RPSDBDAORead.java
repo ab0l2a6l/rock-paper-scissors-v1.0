@@ -1,5 +1,7 @@
 package model.repository;
 
+import model.entity.RockPaperScissors;
+
 public interface RPSDBDAORead {
-    void show();
+    void show(RockPaperScissors rockPaperScissors);
 }
